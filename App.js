@@ -46,9 +46,9 @@ export default function App() {
       return (
         <View key={index} style={styles.row}>
           <Text style={styles.fill}>
-            Recording #{index + 1} | {recordingLine.duration}
+            Gravacao #{index + 1} | {recordingLine.duration}
           </Text>
-          <Button onPress={() => recordingLine.sound.replayAsync()} title="Play"></Button>
+          <Button onPress={() => recordingLine.sound.replayAsync()} title="Tocar"></Button>
         </View>
       );
     });
@@ -60,9 +60,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button title={recording ? 'Stop Recording' : 'Start Recording\n\n\n'} onPress={recording ? stopRecording : startRecording} />
+      <Button title={recording ? 'Parar gravacao' : 'Comecar gravacao\n\n\n'} onPress={recording ? stopRecording : startRecording} />
       {getRecordingLines()}
-      <Button title={recordings.length > 0 ? '\n\n\nClear Recordings' : ''} onPress={clearRecordings} />
+      <Button title={recordings.length > 0 ? '\n\n\nLimpar gravacao' : ''} onPress={clearRecordings} />
     </View>
   );
 }
